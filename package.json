@@ -1,0 +1,33 @@
+{
+  "name": "youtube-dl-webpack",
+  "version": "0.0.1",
+  "description": "A simple Node.js youtube-dl wrapper for webpack",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "ava",
+    "lint": "prettier --write .",
+    "postinstall": "node scripts/postinstall.js"
+  },
+  "engines": {
+    "node": ">= 12"
+  },
+  "files": [
+    "src"
+  ],
+  "keywords": [
+    "youtube-dl",
+    "youtube-dl-wrapper",
+    "webpack"
+  ],
+  "author": "2jun0 <soo28819@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "dargs": "^7.0.0",
+    "execa": "^5.1.1"
+  },
+  "devDependencies": {
+    "ava": "^3.15.0",
+    "webpack": "^5.65.0",
+    "youtube-dl-downloader-webpack-plugin": "^1.0.19"
+  }
+}
