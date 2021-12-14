@@ -1,12 +1,12 @@
 {
   "name": "youtube-dl-webpack",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A simple Node.js youtube-dl wrapper for webpack",
   "main": "src/index.js",
   "scripts": {
     "test": "ava",
     "lint": "prettier --write .",
-    "postinstall": "node scripts/postinstall.js"
+    "posttest": "node scripts/posttest.js"
   },
   "engines": {
     "node": ">= 12"
