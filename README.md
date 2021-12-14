@@ -18,14 +18,15 @@ This repository is a port version of [youtube-dl-exec](https://github.com/microl
 
 ## Installation
 
-`npm install --save youtube-dl-wepback`
+`npm install --save youtube-dl-webpack`<br>
+`npm install --save-dev youtube-dl-downloader-webpack-plugin`
 
 ## Usage
 
 ### In webpack build config
 
 ```js
-const { YoutubeDlDownloaderPlugin } = require('youtube-dl-wepback')
+const { YoutubeDlDownloaderPlugin } = require('youtube-dl-downloader-webpack-plugin')
 
 module.exports = {
   ...
@@ -39,12 +40,12 @@ module.exports = {
 }
 ```
 
-see [plugin options](https://github.com/2jun0/youtube-dl-downloader-webpack-plugin#options-and-defaults-optional) to know detail.
+see [youtube-dl-downloader-webpack-plugin](https://github.com/2jun0/youtube-dl-downloader-webpack-plugin#README) to know detail.
 
 ### Use youtubedl in your codes
 
 ```js
-const youtubedl = require('youtube-dl-wepback')
+const youtubedl = require('youtube-dl-webpack')
 
 youtubedl('https://example.com', {
   dumpSingleJson: true,
