@@ -26,12 +26,12 @@ This repository is a port version of [youtube-dl-exec](https://github.com/microl
 ### In webpack build config
 
 ```js
-const { YoutubeDlDownloaderPlugin } = require('youtube-dl-downloader-webpack-plugin')
+const { YoutudeDlDownloaderWebpackPlugin } = require('youtube-dl-downloader-webpack-plugin')
 
 module.exports = {
   ...
   plugins: [
-    new YoutubeDlDownloaderPlugin({
+    new YoutudeDlDownloaderWebpackPlugin({
       to: 'lib',    // A directory to save file
       from: 'auto', // A site to download file (auto, github or website)
     })
