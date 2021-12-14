@@ -5,9 +5,6 @@
 
 const dargs = require('dargs')
 const execa = require('execa')
-const {
-  YoutudeDlDownloaderWebpackPlugin,
-} = require('youtube-dl-downloader-webpack-plugin')
 const { YOUTUBE_DL_PATH } = require('./options.js')
 
 const args = (url, flags = {}) =>
@@ -27,5 +24,3 @@ module.exports = create(YOUTUBE_DL_PATH)
 module.exports.create = create
 module.exports.args = args
 module.exports.isJSON = isJSON
-module.exports.YoutudeDlDownloaderWebpackPlugin =
-  YoutudeDlDownloaderWebpackPlugin
