@@ -1,12 +1,13 @@
 {
   "name": "youtube-dl-webpack",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A simple Node.js youtube-dl wrapper for webpack",
   "main": "src/index.js",
   "scripts": {
     "test": "ava",
     "lint": "prettier --write .",
-    "posttest": "node scripts/posttest.js"
+    "posttest": "node scripts/posttest.js",
+    "prepublishOnly": "lint"
   },
   "engines": {
     "node": ">= 12"
@@ -30,8 +31,7 @@
     "url": "https://github.com/2jun0/youtube-dl-webpack/issues"
   },
   "dependencies": {
-    "dargs": "^7.0.0",
-    "execa": "^5.1.1"
+    "dargs": "^7.0.0"
   },
   "devDependencies": {
     "ava": "^3.15.0",
