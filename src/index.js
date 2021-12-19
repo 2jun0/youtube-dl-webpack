@@ -4,8 +4,7 @@
 'use strict'
 
 const dargs = require('dargs')
-const util = require('util')
-const execFile = util.promisify(require('child_process').execFile)
+const { execFile } = require('child_process')
 const { YOUTUBE_DL_PATH } = require('./options.js')
 
 const args = (url, flags = {}) =>
@@ -17,7 +16,17 @@ const parse = ({ stdout }) => (isJSON(stdout) ? JSON.parse(stdout) : stdout)
 
 const create = youtubedlPath => {
   const fn = (url, flags) => fn.exec(url, flags).then(parse)
-  fn.exec = (url, flags) => execFile(youtubedlPath, args(url, flags))
+  fn.exec = (url, flags) =>
+    new Promise((resolve, reject) => {
+      execFile(youtubedlPath, args(url, flags), (error, stdout, stderr) => {
+        if (error) {
+          reject(error)
+        }
+
+        resolve({ stdout, stderr })
+      })
+    })
+
   return fn
 }
 
