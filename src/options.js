@@ -6,19 +6,10 @@
 const os = require('os')
 const path = require('path')
 
-function get(key) {
-  if (!key) return undefined
-  return (
-    process.env[key] ||
-    process.env[`YTDLDWP_${key.toLowerCase()}`] ||
-    process.env[`YTDLDWP_${key.toUpperCase()}`]
-  )
-}
-
-const YOUTUBE_DL_DIR = get('to')
+const YOUTUBE_DL_DIR = process.env.YTDLDWP_to
 
 const YOUTUBE_DL_PLATFORM =
-  get('platform') || os.type() === 'Windows_NT' ? 'win32' : 'unix'
+  process.env.YTDLDWP_platform || os.type() === 'Windows_NT' ? 'win32' : 'unix'
 
 const YOUTUBE_DL_FILE =
   YOUTUBE_DL_PLATFORM === 'win32' ? 'youtube-dl.exe' : 'youtube-dl'
